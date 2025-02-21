@@ -1,0 +1,119 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+/* Body Background */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #222222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Calculator Container */
+.calculator {
+    width: 50%;
+    max-width: 400px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 30px rgba(0, 255, 255, 0.6);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+/* Animated Border */
+.calculator::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+    background: linear-gradient(45deg, cyan, magenta, yellow, cyan);
+    border-radius: 18px;
+    animation: borderAnimation 4s linear infinite;
+}
+
+/* Border Animation */
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Heading */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: cyan;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Labels */
+.calculator-content label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: cyan;
+    margin: 15px 0 5px;
+}
+
+/* Input Fields & Dropdown */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    font-size: 18px;
+    background: #000000;
+    color: #00ffff;
+    text-align: center;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+input:focus, select:focus {
+    border-color: #ff00ff;
+    box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(45deg, cyan, magenta);
+    width: 100%;
+    padding: 14px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.7);
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, magenta, yellow);
+    box-shadow: 0px 0px 20px rgba(255, 255, 0, 1);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        padding: 20px;
+    }
+}
